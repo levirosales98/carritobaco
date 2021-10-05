@@ -31,8 +31,8 @@
                 <tr>
                     <td widht="30%"><?php echo $producto['NOMBRE'];?></td>
                     <td class="text-center" widht="20%"><?php echo $producto['CANTIDAD'];?></td>
-                    <td class="text-center" widht="20%"><?php echo $producto['PRECIO'];?></td>
-                    <td class="text-center" widht="20%"><?php echo number_format($producto['CANTIDAD'] * $producto['PRECIO'], 2);?></td>
+                    <td class="text-center" widht="20%">Q<?php echo $producto['PRECIO'];?></td>
+                    <td class="text-center" widht="20%">Q<?php echo number_format($producto['CANTIDAD'] * $producto['PRECIO'], 2);?></td>
                     <td widht="10%">
                         <form action="" method="post">
                             <input type="hidden" name="id" value="<?php echo openssl_encrypt($producto['ID'], COD, KEY);?>">
@@ -55,7 +55,7 @@
 
                 <tr>
                     <td colspan="3" align="right"><h3>Total</h3></td>
-                    <td align="right"><h3><?php echo number_format($total, 2);?></h3></td>
+                    <td align="right"><h3>Q<?php echo number_format($total, 2);?></h3></td>
                     <td></td>
                 </tr>
                 
