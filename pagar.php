@@ -42,18 +42,21 @@
     <br>
 
     <div class="jumbotron text-center">
-        <h1 class="display-4">¡Paso final!</h1>
+        <h1 class="display-4">¡Estas a un paso!</h1>
         <hr class="my-4">
         <p class="lead">Estas a punto de pagar la cantidad de
             <h4>Q<?php echo number_format($total, 2);?></h4>
         </p>
-        <button
-            class="btn btn-success btn-lg btn-block"
-            type="button"
-            name="btnAccion"
-            value="pagar"
-            >Pagar
-        </button>
+        <form action="productos.php" method="post">
+            <button
+                class="btn btn-success btn-lg btn-block"
+                type="submit"
+                name="btnAccion"
+                value="pagar"
+                >Pagar
+            </button>
+        </form>
+        
         <br>
         <p>Los productos podrán ser descargados cuando se procese el pago. <br><br>
             <strong>Correo de contacto: info@ceict.edu.gt</strong>

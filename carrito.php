@@ -11,6 +11,11 @@
                     $ID = openssl_decrypt($_POST['id'],COD,KEY);
                 }
 
+                if(is_string(openssl_decrypt($_POST['imagen'],COD,KEY))) //si puedes desencriptar
+                {
+                    $IMAGEN = openssl_decrypt($_POST['imagen'],COD,KEY);
+                }
+
                 if(is_string(openssl_decrypt($_POST['nombre'],COD,KEY))) //si puedes desencriptar
                 {
                     $NOMBRE = openssl_decrypt($_POST['nombre'],COD,KEY);
@@ -30,6 +35,7 @@
                 {
                     $producto = array(
                         'ID' => $ID,
+                        'IMAGEN' => $IMAGEN,
                         'NOMBRE' => $NOMBRE,
                         'PRECIO' => $PRECIO,
                         'CANTIDAD' => $CANTIDAD
@@ -49,6 +55,7 @@
                         $numeroProductos = count($_SESSION['CARRITO']); //contador para los productos
                         $producto = array(
                             'ID' => $ID,
+                            'IMAGEN' => $IMAGEN,
                             'NOMBRE' => $NOMBRE,
                             'PRECIO' => $PRECIO,
                             'CANTIDAD' => $CANTIDAD
